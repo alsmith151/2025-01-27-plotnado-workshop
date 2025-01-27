@@ -18,10 +18,22 @@ host=$(hostname)
 echo -e "
     Copy/Paste this in your local terminal on VSCode to ssh tunnel with the server on the worker node.
     -----------------------------------------------------------------
-    ssh -N -L $ipnport:localhost:$ipnport $USER@$host
-    -----------------------------------------------------------------
 
-    Look for the http://localhost:xxxx/?token=... in the output below for the link to the jupyter server.
+    ssh -fN -L $ipnport:localhost:$ipnport $USER@$$host
+    -----------------------------------------------------------------
+    
+
+    Look for the http://localhost:$ipnport/?token=... in the output below for the link to the jupyter server.
+
+
+    To end the session:
+    -----------------------------------------------------------------
+    - Cancel the SLURM job: 
+      scancel $SLURM_JOB_ID
+      
+    - Kill the SSH tunnel: 
+      pkill -f "ssh -fN -L $ipnport"
+    -----------------------------------------------------------------
     "
 
 

@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=jupyter
-#SBATCH --output=jupyter.out
-#SBATCH --error=jupyter.out
+#SBATCH --output=jupyter_%j.log
+#SBATCH --error=jupyter_%j.log
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=64G
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=10G
 #SBATCH --time=8:00:00
 #SBATCH --partition=short
 
@@ -18,15 +18,21 @@ host=$(hostname)
 echo -e "
     Copy/Paste this in your local terminal on VSCode to ssh tunnel with the server on the worker node.
     -----------------------------------------------------------------
-    ssh -N -L $ipnport:localhost:$ipnport $USER@$host
-    -----------------------------------------------------------------
+    ssh -fN -L $ipnport:localhost:$ipnport $USER@$host
+    -----------------------------------------------------------------    
 
-    Look for the http://localhost:xxxx/?token=... in the output below for the link to the jupyter server.
+    Look for the http://localhost:$ipnport/?token=... in the output below for the link to the jupyter server.
+
+
+    To end the session:
+    -----------------------------------------------------------------
+    - Cancel the SLURM job: 
+      scancel $SLURM_JOB_ID
+      
+    - Kill the SSH tunnel: 
+      pkill -f "ssh -fN -L $ipnport"
+    -----------------------------------------------------------------
     "
 
 
 apptainer exec /ceph/project/milne_group/asmith/Projects/plotnado/plotnado.sif jupyter lab --no-browser --port=$ipnport
-
-
-
-
