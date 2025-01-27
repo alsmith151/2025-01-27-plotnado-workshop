@@ -1,0 +1,47 @@
+
+    Copy/Paste this in your local terminal on VSCode to ssh tunnel with the server on the worker node.
+    -----------------------------------------------------------------
+    ssh -N -L 8850:localhost:8850 asmith@imm-wn5
+    -----------------------------------------------------------------
+
+    Look for the http://localhost:xxxx/?token=... in the output below for the link to the jupyter server.
+    
+[I 2025-01-27 14:14:09.927 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2025-01-27 14:14:09.935 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2025-01-27 14:14:09.941 ServerApp] jupyterlab | extension was successfully linked.
+[I 2025-01-27 14:14:09.947 ServerApp] notebook | extension was successfully linked.
+/opt/conda/lib/python3.12/site-packages/traitlets/traitlets.py:1897: DeprecationWarning: ServerApp.token config is deprecated in jupyter-server 2.0. Use IdentityProvider.token
+  return t.cast(Sentinel, self._get_trait_default_generator(names[0])(self))
+[I 2025-01-27 14:14:11.306 ServerApp] notebook_shim | extension was successfully linked.
+[I 2025-01-27 14:14:11.306 ServerApp] voila.server_extension | extension was successfully linked.
+[I 2025-01-27 14:14:11.503 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2025-01-27 14:14:11.507 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2025-01-27 14:14:11.509 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2025-01-27 14:14:11.515 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.12/site-packages/jupyterlab
+[I 2025-01-27 14:14:11.515 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 2025-01-27 14:14:11.516 LabApp] Extension Manager is 'pypi'.
+[I 2025-01-27 14:14:11.648 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2025-01-27 14:14:11.657 ServerApp] notebook | extension was successfully loaded.
+[I 2025-01-27 14:14:11.732 ServerApp] voila.server_extension | extension was successfully loaded.
+[I 2025-01-27 14:14:11.733 ServerApp] Serving notebooks from local directory: /project/milne_group/asmith/Projects/2025-01-27-plotnado-workshop
+[I 2025-01-27 14:14:11.733 ServerApp] Jupyter Server 2.15.0 is running at:
+[I 2025-01-27 14:14:11.733 ServerApp] http://localhost:8850/lab?token=6f78a19718cff7968ad95f49ddf0a4fd925ee17550e5e995
+[I 2025-01-27 14:14:11.734 ServerApp]     http://127.0.0.1:8850/lab?token=6f78a19718cff7968ad95f49ddf0a4fd925ee17550e5e995
+[I 2025-01-27 14:14:11.734 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2025-01-27 14:14:11.741 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/a/asmith/.local/share/jupyter/runtime/jpserver-3074478-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8850/lab?token=6f78a19718cff7968ad95f49ddf0a4fd925ee17550e5e995
+        http://127.0.0.1:8850/lab?token=6f78a19718cff7968ad95f49ddf0a4fd925ee17550e5e995
+[I 2025-01-27 14:14:11.815 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[I 2025-01-27 14:21:58.756 ServerApp] 302 GET / (@127.0.0.1) 0.59ms
+[I 2025-01-27 14:21:59.434 LabApp] 302 GET /lab? (@127.0.0.1) 1.44ms
+[I 2025-01-27 14:22:04.216 ServerApp] 302 GET / (@127.0.0.1) 0.64ms
+[I 2025-01-27 14:22:04.219 LabApp] 302 GET /lab? (@127.0.0.1) 0.74ms
+[I 2025-01-27 14:22:06.991 ServerApp] 302 GET / (@127.0.0.1) 0.54ms
+[I 2025-01-27 14:22:06.995 LabApp] 302 GET /lab? (@127.0.0.1) 0.59ms
+[I 2025-01-27 14:22:08.194 ServerApp] Kernel started: 94f54066-95ad-471a-b688-a57abbca5d0b
+[I 2025-01-27 14:22:13.133 ServerApp] Connecting to kernel 94f54066-95ad-471a-b688-a57abbca5d0b.
+[I 2025-01-27 14:41:02.083 ServerApp] Starting buffering for 94f54066-95ad-471a-b688-a57abbca5d0b:3e52dd3e-98de-4397-9f6f-3b8797f1d83f

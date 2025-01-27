@@ -1,0 +1,13 @@
+
+figure.add_track('spacer') # Add a spacer track
+
+rna_tracks = [] # Create an empty list to store the RNA-seq tracks
+for track in rna_bw:
+    t = TrackWrapper('bigwig', file=str(track), title=track.name) # Create a track instance for each RNA-seq bigwig file
+    rna_tracks.append(t) # Append the track instance to the list
+
+# Create the overlay track
+overlay_track = TrackWrapper("bigwig_overlay", rna_tracks)
+   
+# Add the overlay track to the figure
+figure.add_track(overlay_track)
